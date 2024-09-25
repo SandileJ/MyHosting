@@ -1,7 +1,14 @@
 // server.js
 const express = require('express');
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/user');
+const listingRoutes = require('./routes/Listing');
 require('dotenv').config();
+
+
+// Use the routes
+app.use('/api/users', userRoutes);
+app.use('/api/listings', listingRoutes);
 
 const app = express();
 app.use(express.json()); // For parsing JSON data
